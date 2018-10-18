@@ -51,5 +51,24 @@ module.exports = (client) => {
 
         return hours + ':' + minutes;
     };
+	
+	client.convertToDate = (HHMM) => {
+        var d = new Date();
+        var s = HHMM.split(/[:.]/g);
+
+        if (s.length !== 2) {
+            return false;
+        }
+
+        d.setHours(s[0]);
+        d.setMinutes(s[1]);
+        d.setSeconds(0);
+
+        return d;
+    };
+
+    client.capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
 
 };
