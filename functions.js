@@ -23,7 +23,7 @@ module.exports = (client) => {
         if (mm < 10) {
             mm = '0' + mm;
         }
-        return mm + '/' + dd + '/' + yyyy;
+        return mm + '-' + dd + '-' + yyyy;
     };
 
     client.convertTimeto24 = (time12h) => {
