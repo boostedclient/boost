@@ -6,6 +6,16 @@ if(isset($_SESSION["un"])) {
 	
 }
 
+switch($_GET["action"]) {
+	case "auth":
+		$ux = $_POST["upx"];
+		break;
+	case "gud":
+		$uts = $_POST["dns"];
+		break;
+	
+}
+
 echo "Enter key";
 echo "<input type='text' name='key'>";
 echo "<input type='submit'>";
