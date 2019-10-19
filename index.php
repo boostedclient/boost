@@ -2,7 +2,28 @@
 session_start();
 
 if(isset($_SESSION["un"])) {
-	//todo
+
+    switch($_GET["action"]) {
+        case "login":
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST["user"]) && ctype_alnum($_POST["user"])) {
+                    $user = $_POST["user"];
+                }
+                if (isset($_POST["pass"])) {
+                    $pass = $_POST["pass"];
+                }
+
+                if (isset($user, $pass) && $user == "5asians" && $pass == "5asians") {
+                    $_SESSION["user"] = $_POST["user"];
+                } else {
+                    $redirect = "index.php?error=1";
+                }
+            }
+            break;
+
+        case "logout":
+            $_SESSION['user'] = null;
+            break;
 	
 }
 
