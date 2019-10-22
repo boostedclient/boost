@@ -8,12 +8,17 @@ if(isset($_SESSION["un"])) {
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (isset($_POST["user"]) && ctype_alnum($_POST["user"])) {
                     $user = $_POST["user"];
+                } else {
+                    
                 }
+                
                 if (isset($_POST["pass"])) {
                     $pass = $_POST["pass"];
+                } else {
+                    
                 }
 
-                if (isset($user, $pass) && $user == "5asians" && $pass == "5asians") {
+                if (isset($user, $pass) && $user == "" && $pass == "") {
                     $_SESSION["user"] = $_POST["user"];
                 } else {
                     $redirect = "index.php?error=1";
