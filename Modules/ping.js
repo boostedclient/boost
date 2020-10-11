@@ -5,5 +5,5 @@ exports.run = (client, obj, args) => {
 exports.conf = {
     acl: 0,
     enabled: true,
-    guildOnly: false
+    imx: false
 };
