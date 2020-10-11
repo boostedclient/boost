@@ -1,4 +1,15 @@
 module.exports = (client) => {
+    
+    client.logger = (msg) => {
+        var d = new Date(),
+                dformat = [("0" + (d.getMonth() + 1)).slice(-2),
+                           ("0" + d.getDate()).slice(-2),
+                           d.getFullYear()].join('/') + ' ' +
+            [("0" + d.getHours()).slice(-2),
+             ("0" + d.getMinutes()).slice(-2),
+             ("0" + d.getSeconds()).slice(-2)].join(':');
+        console.log("[" + dformat + "] " + client.clVersion + ": " + msg);
+    };
 
     client.formatDateTimestamp = (date) => {
         // YYYY-MM-DD HH:MM:ss
