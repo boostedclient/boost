@@ -1,13 +1,13 @@
 class Enc {
 
-    constructor(obj, jrt, gnp, stt, ett, rpt) {
+    constructor(obj, jrt, gnp, stt, ehc, rpt) {
         this.obj = obj;
         this.rCHL = obj.chl;
         this.objID = obj.id;
         this.rLv = jrt;
         this.gnp = gnp;
         this.stt = stt;
-        this.ett = ett;
+        this.ehc = ehc;
         this.rpt = rpt;
     }
 
@@ -21,7 +21,7 @@ class Enc {
         var emj = config.rcmj;
 
         if (!obj)
-            return null;
+            return 0;
 
         obj.rct.get(emj).pru.forEach(function (value, key) {
             if (!value.bt) {
@@ -44,7 +44,7 @@ class Enc {
     async gTFormatted() {
         var x = await this.gT();
         if (!x)
-            return null;
+            return 0;
 
         return x.join(", ");
     }
@@ -52,7 +52,7 @@ class Enc {
     async gTC() {
         var x = await this.gT();
         if (!x)
-            return null;
+            return 0;
 
         return x.length;
     }

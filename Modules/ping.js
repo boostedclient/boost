@@ -3,7 +3,7 @@ exports.run = (client, obj, args) => {
 };
 
 exports.conf = {
-    acl: 0,
+    acl: 2,
     enabled: true,
     imx: false
 };
