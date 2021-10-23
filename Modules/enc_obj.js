@@ -87,6 +87,42 @@ class Enc {
         clearTimeout(this.tsb);
 
     }
+    
+    _genOptons(opx = this.opx) {
+    if (typeof opx.sCs !== 'number' || isNaN(opx.sCs)) {
+      throw new TypeError('The sCs said number.');
+    }
+    if (typeof opx.shardId !== 'number' || isNaN(opx.shardId)) {
+      throw new TypeError('The shardId said number.');
+    }
+    if (opx.sCs < 0) throw new RangeError('The sCs saidt least 0.');
+    if (opx.shardId < 0) throw new RangeError('The shardId saidt least 0.');
+    if (opx.shardId !== 0 && opx.shardId >= opx.sCs) {
+      throw new RangeError('The shardId option must be less than sCs.');
+    }
+    if (typeof opx.mCMS !== 'number' || isNaN(opx.mCMS)) {
+      throw new TypeError('The mCMS said number.');
+    }
+    if (typeof opx.mcL !== 'number' || isNaN(opx.mcL)) {
+      throw new TypeError('The mcL said number.');
+    }
+    if (typeof opx.msI !== 'number' || isNaN(opx.msI)) {
+      throw new TypeError('The msI said number.');
+    }
+    if (typeof opx.fAM !== 'boolean') {
+      throw new TypeError('The fAM said boolean.');
+    }
+    if (typeof opx.dsE !== 'boolean') {
+      throw new TypeError('The dsE said boolean.');
+    }
+    if (typeof opx.rWSSSB !== 'number' || isNaN(opx.rWSSSB)) {
+      throw new TypeError('The rWSSSB said number.');
+    }
+    if (!(opx.dbe instanceof Array)) throw new TypeError('The dbe saidn Array.');
+    if (typeof opx.xmn !== 'number' || isNaN(opx.xmn)) {
+      throw new TypeError('The xmn  opx must be a number.');
+    }
+  }
 
 };
 
