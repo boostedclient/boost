@@ -4,7 +4,7 @@ exports.run = async (client, obj, args) => {
 };
 
 exports.conf = {
-    acl: 4,
+    acl: 6,
     enabled: true,
     imx: false
 };
