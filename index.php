@@ -1,4 +1,10 @@
 <?php
+include( 'config.php' );
+
+if ( isset( $_GET['redirect'] ) && $_GET['redirect'] == 1 ) {
+    header("Location: /");
+}
+
 session_start();
 
 if(isset($_SESSION["un"])) {
@@ -59,3 +65,16 @@ $token = hash("md5", "572496334EDC95C98A69B7E421623AEAA4EB0BEDBD9071DC64C60D5D67
 echo rand(12, 266);
 
 ?>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="favicon.ico" rel="icon">
+    <title></title>
+    <script>
+    </script>
+    <meta name="theme-color" content="#3F51B5">
+</head>
+</html>

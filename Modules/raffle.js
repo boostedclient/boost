@@ -1,12 +1,12 @@
-exports.run = (client, obj, param) => {
+exports.run = (xclient, obj, param) => {
     var db = require("../modules/DBAccess.js");
 
     var rTab = "raffle";
 
     // allow truncating table if owner
-    if (param[0] === "reset" && client.getAccessLevel(obj) >= 4) {
+    if (param[0] === "reset" && xclient.getAccessLevel(obj) >= 4) {
         var sqlTrunc = db.mysql.format("TRUNCATE ??.??",
-                [client.config.db.db, rTab]);
+                [xclient.config.db.db, rTab]);
 
         db.con.query(sqlTrunc, (err, rows, fields) => {
             if (err) {
@@ -25,7 +25,7 @@ exports.run = (client, obj, param) => {
         
         for (i=0;i<rafCount;i++) {
             var sqlCheck = db.mysql.format("SELECT * FROM ??.?? WHERE `win` = 0 ORDER BY RAND() LIMIT 1",
-                    [client.config.db.db, rTab]);
+                    [xclient.config.db.db, rTab]);
 
             db.con.query(sqlCheck, (err, rows, fields) => {
                 if (err) {
@@ -36,7 +36,7 @@ exports.run = (client, obj, param) => {
                 if (rows.length > 0) {
                     var userid = rows[0].userid;
                     var sqlMark = db.mysql.format("UPDATE ??.?? SET `win` = 1 WHERE `userid` = ?",
-                            [client.config.db.db, rTab, userid]);
+                            [xclient.config.db.db, rTab, userid]);
 
                     db.con.query(sqlMark, (err, rows, fields) => {
                         if (err) {

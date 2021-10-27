@@ -1,10 +1,11 @@
-exports.run = async (client, obj, args) => {
-    await obj.reply("rebooting...");
+exports.run = async (xclient, obj, args) => {
+    await obj.reply("Rebooting...");
     process.exit(1);
 };
 
 exports.conf = {
-    acl: 6,
+    acl: 10,
     enabled: true,
-    imx: false
+    imx: false,
+    tmq: true
 };

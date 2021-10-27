@@ -3,10 +3,10 @@ const mysql = require('mysql');
 const config = require("../config.json");
 
 var connection = mysql.createPool({
-    host: config.db.host,
-    user: config.db.user,
-    password: config.db.password,
-    database: config.db.db
+    host: config.dbx.host,
+    user: config.dbx.user,
+    password: config.dbx.password,
+    database: config.dbx.db
 });
 
 connection.getConnection(function (err) {

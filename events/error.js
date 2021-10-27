@@ -1,4 +1,4 @@
-module.exports = (client, error) => {
+module.exports = (xclient, error) => {
     console.log(error);
     
     fs.readdir("../evts/", (err, files) => {
@@ -9,9 +9,9 @@ module.exports = (client, error) => {
         let evtName = file.split(".")[0];
         
         if (evtName == "e") {
-            client.once(evtName, evt.bind(0, client));
+            xclient.once(evtName, evt.bind(0, xclient));
         } else {
-            client.on(evtName, evt.bind(0, client));
+            xclient.on(evtName, evt.bind(0, xclient));
         }
     });
 });
