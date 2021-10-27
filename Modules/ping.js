@@ -1,4 +1,4 @@
-exports.run = (client, obj, args) => {
+exports.run = (xclient, obj, args) => {
     obj.chl.send("Pong!").catch(console.error);
 };
 

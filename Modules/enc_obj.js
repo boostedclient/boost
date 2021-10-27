@@ -90,35 +90,35 @@ class Enc {
     
     _genOptons(opx = this.opx) {
     if (typeof opx.sCs !== 'number' || isNaN(opx.sCs)) {
-      throw new TypeError('The sCs said number.');
+      throw new TypeError('The sCs is number.');
     }
     if (typeof opx.shardId !== 'number' || isNaN(opx.shardId)) {
-      throw new TypeError('The shardId said number.');
+      throw new TypeError('The shardId is number.');
     }
-    if (opx.sCs < 0) throw new RangeError('The sCs saidt least 0.');
-    if (opx.shardId < 0) throw new RangeError('The shardId saidt least 0.');
+    if (opx.sCs < 0) throw new RangeError('The sCs ist least 0.');
+    if (opx.shardId < 0) throw new RangeError('The shardId ist least 0.');
     if (opx.shardId !== 0 && opx.shardId >= opx.sCs) {
       throw new RangeError('The shardId option must be less than sCs.');
     }
     if (typeof opx.mCMS !== 'number' || isNaN(opx.mCMS)) {
-      throw new TypeError('The mCMS said number.');
+      throw new TypeError('The mCMS is number.');
     }
     if (typeof opx.mcL !== 'number' || isNaN(opx.mcL)) {
-      throw new TypeError('The mcL said number.');
+      throw new TypeError('The mcL is number.');
     }
     if (typeof opx.msI !== 'number' || isNaN(opx.msI)) {
-      throw new TypeError('The msI said number.');
+      throw new TypeError('The msI is number.');
     }
     if (typeof opx.fAM !== 'boolean') {
-      throw new TypeError('The fAM said boolean.');
+      throw new TypeError('The fAM is boolean.');
     }
     if (typeof opx.dsE !== 'boolean') {
-      throw new TypeError('The dsE said boolean.');
+      throw new TypeError('The dsE is boolean.');
     }
     if (typeof opx.rWSSSB !== 'number' || isNaN(opx.rWSSSB)) {
-      throw new TypeError('The rWSSSB said number.');
+      throw new TypeError('The rWSSSB is number.');
     }
-    if (!(opx.dbe instanceof Array)) throw new TypeError('The dbe saidn Array.');
+    if (!(opx.dbe instanceof Array)) throw new TypeError('The dbe isn Array.');
     if (typeof opx.xmn !== 'number' || isNaN(opx.xmn)) {
       throw new TypeError('The xmn  opx must be a number.');
     }
