@@ -112,6 +112,9 @@ class Enc {
     if (typeof opx.fAM !== 'boolean') {
       throw new TypeError('The fAM is boolean.');
     }
+    if (typeof opx.PoM !== 'boolean') {
+      throw new TypeError('The PoM is boolean.');
+    }
     if (typeof opx.dsE !== 'boolean') {
       throw new TypeError('The dsE is boolean.');
     }
@@ -120,7 +123,7 @@ class Enc {
     }
     if (!(opx.dbe instanceof Array)) throw new TypeError('The dbe isn Array.');
     if (typeof opx.xmn !== 'number' || isNaN(opx.xmn)) {
-      throw new TypeError('The xmn  opx must be a number.');
+      throw new TypeError('The xmn opx must be a number.');
     }
   }
 
