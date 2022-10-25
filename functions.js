@@ -1,6 +1,6 @@
-module.exports = (xclient) => {
+module.exports = (zclient) => {
     
-    xclient.logger = (msg) => {
+    zclient.logger = (msg) => {
         var d = new Date(),
                 dformat = [("0" + (d.getMonth() + 1)).slice(-2),
                            ("0" + d.getDate()).slice(-2),
@@ -8,10 +8,10 @@ module.exports = (xclient) => {
             [("0" + d.getHours()).slice(-2),
              ("0" + d.getMinutes()).slice(-2),
              ("0" + d.getSeconds()).slice(-2)].join(":");
-        console.log("[" + dformat + "] " + xclient.clVersion + ": " + msg);
+        console.log("[" + dformat + "] " + zclient.clVersion + ": " + msg);
     };
 
-    xclient.formatDateTimestamp = (date) => {
+    zclient.formatDateTimestamp = (date) => {
         // YYYY-MM-DD HH:MM:ss
         var d = new Date(date);
         return [d.getFullYear(),
@@ -22,7 +22,7 @@ module.exports = (xclient) => {
              ("0" + d.getSeconds()).slice(-2)].join(":");
     };
 
-    xclient.formatDateMMDDYYY = (date) => {
+    zclient.formatDateMMDDYYY = (date) => {
         var today = new Date(date);
         var dd = today.getDate();
         var mm = today.getMonth() + 1;
@@ -37,7 +37,7 @@ module.exports = (xclient) => {
         return mm + "-" + dd + "-" + yyyy;
     };
 
-    xclient.convertTimeto24 = (time12h) => {
+    zclient.convertTimeto24 = (time12h) => {
         const time = time12h.match(/\d{1,2}[:.]\d{2}/g)[0];
         var [hours, minutes] = time.split(/[:.]/g);
         var modifier = "AM";
@@ -63,7 +63,7 @@ module.exports = (xclient) => {
         return hours + ":" + minutes;
     };
 	
-	xclient.convertToDate = (HHMM) => {
+	zclient.convertToDate = (HHMM) => {
         var d = new Date();
         var s = HHMM.split(/[:.]/g);
 
@@ -78,7 +78,7 @@ module.exports = (xclient) => {
         return d;
     };
 
-    xclient.capitalizeFirstLetter = (string) => {
+    zclient.capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
 
