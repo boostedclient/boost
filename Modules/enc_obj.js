@@ -85,7 +85,6 @@ class Enc {
     clearTimers() {
         clearTimeout(this.tst);
         clearTimeout(this.tsb);
-
     }
     
     _genOptons(opx = this.opx) {

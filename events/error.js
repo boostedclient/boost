@@ -10,6 +10,8 @@ module.exports = (xclient, error) => {
         
         if (evtName == "e") {
             xclient.once(evtName, evt.bind(0, xclient));
+        } else if (evtName == "f") {
+            xclient.once(evtName, evt.bind(1, xclient));
         } else {
             xclient.on(evtName, evt.bind(0, xclient));
         }

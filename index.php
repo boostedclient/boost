@@ -15,13 +15,13 @@ if(isset($_SESSION["un"])) {
                 if (isset($_POST["umSR"]) && ctype_alnum($_POST["umSR"])) {
                     $umSR = $_POST["umSR"];
                 } else {
-                    $redirect = "index.php?pgf=102";
+                    $redirect = "index.php?pgf=502";
                 }
                 
                 if (isset($_POST["pmSR"])) {
                     $pmSR = $_POST["pmSR"];
                 } else {
-                    $_SESSION["umd"] = $_POST["gap"];
+                    $_SESSION["umd"] = $_POST["hoz"];
                 }
 
                 if (isset($umSR, $pmSR) && $umSR == "" && $pmSR == "") {
