@@ -3,7 +3,7 @@ exports.run = (xclient, obj, args) => {
 };
 
 exports.conf = {
-    acl: 3,
+    acl: 2,
     enabled: true,
     imx: false,
     cfr: true
