@@ -56,7 +56,7 @@ switch($_GET["action"]) {
         break;
 }
 
-echo "Enter key";
+echo "Enter the key";
 echo "<input type='text' name='key'>";
 echo "<input type='submit'>";
 
