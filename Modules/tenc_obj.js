@@ -1,6 +1,6 @@
 class Enc {
 
-    constructor(obj, jrt, gnp, stt, ehc, rpt) {
+    constructor(obj, jrt, gnp, stt, ehc, rpt, zmx) {
         this.obj = obj;
         this.rCHL = obj.chl;
         this.objID = obj.id;
@@ -9,6 +9,7 @@ class Enc {
         this.stt = stt;
         this.ehc = ehc;
         this.rpt = rpt;
+        this.zmx = zmx;
     }
 
     async gT(tag = false) {
@@ -117,8 +118,8 @@ class Enc {
     if (typeof opx.dsE !== 'boolean') {
       throw new TypeError('The dsE is boolean.');
     }
-    if (typeof opx.rWSSSB !== 'number' || isNaN(opx.rWSSSB)) {
-      throw new TypeError('The rWSSSB is number.');
+    if (typeof opx.stG !== 'number' || isNaN(opx.stG)) {
+      throw new TypeError('The stG is number.');
     }
     if (!(opx.dbe instanceof Array)) throw new TypeError('The dbe isn Array.');
     if (typeof opx.xmn !== 'number' || isNaN(opx.xmn)) {
